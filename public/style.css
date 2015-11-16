@@ -1,0 +1,43 @@
+*{	
+	box-sizing:border-box;  /*Mantiene el ancho que uno especifique independientemente  del padding que tenga el elemento,  *{es para todos los elementos }  */
+} 
+
+body{
+
+	font-family: 'Limelight', cursive;
+	/* Involucrar en las css la fuente declarada en el html, esta instruccion se obtiene en https://www.google.com/fonts*/
+	font-size: 16px;
+	line-height: 1.6;
+}
+
+section{
+	padding: 40px 0;
+	text-align: center;
+}
+
+
+#tasks{
+	background-color: #034060;/*#9A9497;*/
+	width: 100%;
+	color: white;
+
+}
+
+table{
+	width:50%;        
+	margin:auto;  /*Asi se centra la tabla*/
+
+}
+
+table, th, td{
+border:3px solid black;
+border-collapse:collapse;
+}
+
+#completa{
+	background-color: #31AFFF;
+
+}
+
+
+

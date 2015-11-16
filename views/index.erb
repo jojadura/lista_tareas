@@ -1,0 +1,54 @@
+<!doctype html>
+<hmtl>
+	<head>
+		<meta charset="UTF-8">
+		<title>Tareas</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Limelight' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/normalize.css">
+		<link rel="stylesheet" href="/style.css">		
+	</head>
+	<body>
+		<form action="/" method="post">
+			<section id="tasks">
+				<h1>LISTA DE TAREAS</h1>
+			</section>
+			<section>
+				<img src="/tareas.jpg" alt="Tareas">
+				<br><br>
+				<input type="text" name="task" placeholder="Tarea"></div>
+				<input type="submit" value="Agregar">
+			</section>
+		</form>
+		<section>
+	     	<table>
+		       <tr>
+		         <th>Id</th>
+		         <th>Tarea</th>
+		         <th>Estado Tarea</th>
+		         <th>Fecha Creación</th>
+		         <th>Acción</th>
+		       </tr>
+			<% @tareas.each do |tarea| %>
+				<tr>
+				     <td><%= tarea["id"] %></td>
+				     <td><%= tarea["title"] %></td>
+				     <% if tarea["done"]  == false %>
+				     	<td>Sin completar</td>
+				     <% else %>
+				     	<td id="completa">Completa</td>
+		     		 <% end %>
+				     <td><%= tarea["created_at"] %></td>
+				     <td><a href="/<%= tarea["id"] %>/delete"><i class="fa fa-trash-o"></i></a> |
+				     	 <a href="/<%= tarea["id"] %>/complete"><i class="fa fa-check-square"></i></a>
+				     </td>
+
+		       </tr>
+			
+			<% end %>
+			</table>
+		</section>
+
+	</body>
+</hmtl>
+
